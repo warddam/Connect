@@ -9,7 +9,7 @@ public class Connect4 {
 
         char[][] grid = new char[6][7];
 
-        //initialize array
+
         for (int row = 0; row < grid.length; row++){
             for (int col = 0; col < grid[0].length; col++){
                 grid[row][col] = ' ';
@@ -30,7 +30,7 @@ public class Connect4 {
                 System.out.print("Player " + player + ", choose a column: ");
                 play = in.nextInt();
 
-                //validate play
+
                 validPlay = validate(play,grid);
 
             }while (validPlay == false);
@@ -43,7 +43,7 @@ public class Connect4 {
                 }
             }
 
-            //determine if there is a winner
+
             winner = isWinner(player,grid);
 
             //switch players
@@ -111,7 +111,7 @@ public class Connect4 {
                 }
             }
         }
-        //check for 4 up and down
+
         for(int row = 0; row < grid.length - 3; row++){
             for(int col = 0; col < grid[0].length; col++){
                 if (grid[row][col] == player   &&
@@ -122,7 +122,7 @@ public class Connect4 {
                 }
             }
         }
-        //check upward diagonal
+
         for(int row = 3; row < grid.length; row++){
             for(int col = 0; col < grid[0].length - 3; col++){
                 if (grid[row][col] == player   &&
@@ -133,7 +133,7 @@ public class Connect4 {
                 }
             }
         }
-        //check downward diagonal
+
         for(int row = 0; row < grid.length - 3; row++){
             for(int col = 0; col < grid[0].length - 3; col++){
                 if (grid[row][col] == player   &&
